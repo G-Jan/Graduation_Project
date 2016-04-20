@@ -1,0 +1,20 @@
+.mb5 {
+  margin-bottom: 5px;
+}
+.clear {
+  clear: both;
+}
+button,
+a {
+  outline: none;
+}
+.formtable {
+  width: 100%;
+}
+.formtable tr {
+  line-height: 3em;
+}
+.formtable .list-name {
+  width: 10em;
+  text-align: right;
+}

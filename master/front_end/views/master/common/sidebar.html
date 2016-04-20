@@ -1,0 +1,174 @@
+
+<script src="/public/js/jquery.min.js"></script>
+<div id="sidebar" class="sidebar responsive">
+  <script type="text/javascript">
+    try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+  </script>
+  <ul class="nav nav-list">
+    <li class="menu-list">
+      <a href="/master/">
+        <i class="menu-icon fa fa-tachometer"></i>
+        <span class="menu-text"> 综合 </span>
+      </a>
+
+      <b class="arrow"></b>
+    </li>
+    <!-- 用户管理 -->
+    <li class="menu-list">
+      <a href="javascript:" class="dropdown-toggle">
+        <i class="menu-icon fa fa-users"></i>
+        <span class="menu-text">
+          用户管理
+        </span>
+
+        <b class="arrow fa fa-angle-down"></b>
+      </a>
+
+      <b class="arrow"></b>
+
+      <ul class="submenu">
+
+        <li class="submenu-list">
+          <a href="/master/management/user/client/">
+            <i class="menu-icon fa fa-caret-right"></i>
+            交易平台账号管理
+          </a>
+
+          <b class="arrow"></b>
+        </li>
+
+        <li class="submenu-list">
+          <a href="/master/management/user/administrator/">
+            <i class="menu-icon fa fa-caret-right"></i>
+            运维平台账户管理
+          </a>
+
+          <b class="arrow"></b>
+        </li>
+      </ul>
+    </li>
+    <!-- 商品管理 -->
+    <li class="menu-list">
+      <a href="#" class="dropdown-toggle">
+        <i class="menu-icon glyphicon glyphicon-tags"></i>
+        <span class="menu-text"> 商品管理 </span>
+
+        <b class="arrow fa fa-angle-down"></b>
+      </a>
+
+      <b class="arrow"></b>
+
+      <ul class="submenu">
+        <li class="submenu-list">
+          <a href="/master/management/commodity/add/">
+            <i class="menu-icon fa fa-caret-right"></i>
+            新增商品
+          </a>
+
+          <b class="arrow"></b>
+        </li>
+
+        <li class="submenu-list">
+          <a href="/master/management/commodity/search/">
+            <i class="menu-icon fa fa-caret-right"></i>
+            线上商品查询
+          </a>
+
+          <b class="arrow"></b>
+        </li>
+      </ul>
+    </li>
+    <!-- 订单管理 -->
+    <li class="menu-list">
+      <a href="#" class="dropdown-toggle">
+        <i class="menu-icon fa fa-pencil-square-o"></i>
+        <span class="menu-text"> 订单管理 </span>
+
+        <b class="arrow fa fa-angle-down"></b>
+      </a>
+
+      <b class="arrow"></b>
+
+      <ul class="submenu">
+        <li class="submenu-list">
+          <a href="/master/management/order/search/">
+            <i class="menu-icon fa fa-caret-right"></i>
+            订单查询
+          </a>
+
+          <b class="arrow"></b>
+        </li>
+      </ul>
+    </li>
+
+    <li class="menu-list">
+      <a href="#" class="dropdown-toggle">
+        <i class="menu-icon fa fa-file-o"></i>
+
+        <span class="menu-text">
+          问题与反馈
+        </span>
+
+        <b class="arrow fa fa-angle-down"></b>
+      </a>
+
+      <b class="arrow"></b>
+
+      <ul class="submenu">
+        <li class="submenu-list">
+          <a href="/master/outline/FAQ/">
+            <i class="menu-icon fa fa-caret-right"></i>
+            常见问题
+          </a>
+
+          <b class="arrow"></b>
+        </li>
+
+        <li class="submenu-list">
+          <a href="/master/outline/about/">
+            <i class="menu-icon fa fa-caret-right"></i>
+            关于我的毕设
+          </a>
+
+          <b class="arrow"></b>
+        </li>
+
+        <li class="submenu-list">
+          <a href="/master/blank/">
+            <i class="menu-icon fa fa-caret-right"></i>
+            空白页
+          </a>
+
+          <b class="arrow"></b>
+        </li>
+      </ul>
+    </li>
+  </ul><!-- /.nav-list -->
+
+  <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+    <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+  </div>
+  <script type="text/javascript">
+    try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+  </script>
+  <input type="hidden" value="{# block menu #}blank{# endblock #}">
+  <input type="hidden" value="{# block submenu #}blank{# endblock #}">
+  <script>
+    (function () {
+      var url = window.location.pathname;
+      var a = $('a[href="' + url + '"]');
+      var submenu = $('a[href="' + url + '"]').parent(".submenu-list");
+      if (submenu) {
+        var submenuUl = submenu.parent(".submenu");
+        if (submenuUl) {
+          var menu = submenuUl.parent(".menu-list");
+        }
+      }else {
+        var menu = $('a[href="' + url + '"]').parent(".menu-list");
+      }
+      menu.addClass('active open');
+      submenu.addClass('active');
+      console.log(url);
+    })();
+  </script>
+</div>

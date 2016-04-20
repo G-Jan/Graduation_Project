@@ -1,0 +1,152 @@
+{% extends "../../../blank/index.html" %} {% block title %}运营{% endblock %} {% block content %}
+<link rel="stylesheet" href="style.css">
+<div class="page-header">
+  <h1>
+    新增商品
+    <small>
+      <i class="ace-icon fa fa-angle-double-right"></i>
+      为商城添加一件新的商品
+    </small>
+  </h1>
+</div>
+<div class="page-body">
+  <div class="form-group">
+    <form action="heheda.html" class="form-horizontal">
+      <div class="clearfix form-actions clear">
+        <div class="col-sm-12 mb5">
+          <div class="col-sm-4">
+            <label for="pname" class="col-sm-4 control-label no-padding-right">商品名：</label>
+            <input id="pname" class="input-sm" type="text" id="form-field-4" placeholder="商品名">
+          </div>
+          <div class="col-sm-4">
+            <label for="brandType" class="col-sm-4 control-label no-padding-right">品牌类型：</label>
+            <input id="brandType" class="input-sm" type="text" id="form-field-4" placeholder="品牌类型">
+          </div>
+          <div class="col-sm-4">
+            <label for="degrees" class="col-sm-4 control-label no-padding-right">度数：</label>
+            <input id="degrees" class="input-sm" type="text" id="form-field-4" placeholder="度数">
+          </div>
+        </div>
+        <div class="col-sm-12 mb5">
+          <div class="col-sm-4">
+            <label for="" class="col-sm-4 control-label no-padding-right">容量：</label>
+            <input id="" class="input-sm" type="text" id="form-field-4" placeholder="容量">
+          </div>
+          <div class="col-sm-4">
+            <label for="" class="col-sm-4 control-label no-padding-right">产地：</label>
+            <input id="" class="input-sm" type="text" id="form-field-4" placeholder="产地">
+          </div>
+          <div class="col-sm-4">
+            <label for="" class="col-sm-4 control-label no-padding-right">原料：</label>
+            <input id="" class="input-sm" type="text" id="form-field-4" placeholder="原料">
+          </div>
+        </div>
+        <div class="col-sm-12 mb5">
+          <div class="col-sm-4">
+            <label for="" class="col-sm-4 control-label no-padding-right">储藏条件：</label>
+            <input id="" class="input-sm" type="text" id="form-field-4" placeholder="储藏条件">
+          </div>
+          <div class="col-sm-4">
+            <label for="" class="col-sm-4 control-label no-padding-right">温度：</label>
+            <input id="" class="input-sm" type="text" id="form-field-4" placeholder="温度">
+          </div>
+          <div class="col-sm-4">
+            <label for="" class="col-sm-4 control-label no-padding-right">库存：</label>
+            <input id="" class="input-sm" type="text" id="form-field-4" placeholder="库存">
+          </div>
+        </div>
+        <div class="col-sm-12 mb5">
+          <div class="col-sm-4">
+            <label for="" class="col-sm-4 control-label no-padding-right">零售价：</label>
+            <input id="" class="input-sm" type="text" id="form-field-4" placeholder="零售价">
+          </div>
+          <div class="col-sm-4">
+            <label for="" class="col-sm-4 control-label no-padding-right">醉翁价：</label>
+            <input id="" class="input-sm" type="text" id="form-field-4" placeholder="醉翁价">
+          </div>
+        </div>
+        <!-- 添加商品图片 -->
+        <div action="#" class="dropzone clear mb5" id="dropzone">
+          <div class="fallback">
+            <input name="heheda" type="file" multiple="" />
+          </div>
+        </div>
+        <div class="col-md-offset-4 col-md-5">
+          <button class="btn btn-info" type="button" id="submit">
+            <i class="ace-icon fa fa-check bigger-110"></i> 新增
+          </button>
+          &nbsp; &nbsp; &nbsp;
+          <button class="btn" type="reset">
+            <i class="ace-icon fa fa-undo bigger-110"></i> 重置
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- page specific plugin scripts -->
+<script src="/public/js/dropzone.js"></script>
+<!-- inline scripts related to this page -->
+<script type="text/javascript">
+jQuery(function($) {
+  try {
+    Dropzone.autoDiscover = false;
+    var myDropzone = new Dropzone("#dropzone", {
+      url:"heheda.jsp",
+      paramName: "photo",
+      params:{ // 图片对应的详情
+        pname:"666",
+        heheda:"heheda"
+      },
+      maxFilesize: 1.0, // 文件大小上限/MB
+      addRemoveLinks: true, // 添加移除按钮
+      autoProcessQueue:false, //取消同步上载
+      // 相应的汉化
+      dictRemoveFile:"移除文件",
+      dictInvalidFileType: "您无法上传此类型的文件",
+      dictCancelUpload: "取消上传",
+      dictCancelUploadConfirmation: "您确定要取消上传吗？",
+      dictMaxFilesExceeded: "您无法上传更多的文件",
+      dictResponseError: '文件同步上传失败!',
+      // 汉化部分结束
+
+      // 定制UI部分
+      dictDefaultMessage: '<span class="bigger-150 bolder"><i class="ace-icon fa fa-caret-right red"></i> 商品 图片</span>上传\
+    <span class="smaller-80 grey">(拖动或点击上传)</span> <br /> \
+    <i class="upload-icon ace-icon fa fa-cloud-upload blue fa-3x"></i>',
+      //更改 previewTemplate 使用 Bootstrap 进度条
+      previewTemplate: "<div class=\"dz-preview dz-file-preview\">\n  <div class=\"dz-details\">\n    <div class=\"dz-filename\"><span data-dz-name></span></div>\n    <div class=\"dz-size\" data-dz-size></div>\n    <img data-dz-thumbnail />\n  </div>\n  <div class=\"progress progress-small progress-striped active\"><div class=\"progress-bar progress-bar-success\" data-dz-uploadprogress></div></div>\n  <div class=\"dz-success-mark\"><span></span></div>\n  <div class=\"dz-error-mark\"><span></span></div>\n  <div class=\"dz-error-message\"><span data-dz-errormessage></span></div>\n</div>"
+      // 定制UI部分结束
+    });
+
+    // $(document).one('ajaxloadstart.page', function(e) {
+    //   try {
+    //     myDropzone.destroy();
+    //   } catch (e) {}
+    // });
+
+    $("#submit").click(function () {
+      myDropzone.processQueue();
+    });
+  } catch (e) {
+    alert('图片上传模块无法支持您当前的浏览器，请更新浏览器!');
+  }
+});
+</script>
+{% endblock %}
+
+
+接口说明：
+{
+  pName:"商品名",
+  brandType:"品牌类型",
+  degree:"度数",
+  capacity:"容量",
+  origin:"产地",
+  rawMaterial:"原料",
+  storage:"储藏条件",
+  temperature:"温度",
+  stock:"库存",
+  price:"零售价",
+  zuiWeng:"醉翁价"
+}
