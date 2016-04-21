@@ -14,6 +14,8 @@ app.use(express.static('static'));
 // 加载路由模块
 var routes = require('./routes')(app);
 
-app.listen(80,function () {
-  console.log("server starting...");
+// 设置监听
+var port = process.env.FA_PORT || 80;
+app.listen(port,function () {
+  console.log("server starting on port :%s",port);
 });

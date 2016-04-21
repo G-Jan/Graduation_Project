@@ -1,45 +1,5 @@
 module.exports = function (app) {
-  // app.get('/oauth', function (req, res){
-  //   res.render('oauth/index');
-  // });
-  // app.get('/login',function (req,res) {
-  //   res.render('Login');
-  // });
-  // app.get('/order',function (req,res) {
-  //   res.render('Order');
-  // });
-  // app.get('/check',function (req,res) {
-  //   res.render('Check');
-  // });
-  // app.get('/logup',function (req,res) {
-  //   res.render('logup');
-  // });
-  // app.get('/personal',function (req,res) {
-  //   res.render('personal');
-  // });
-  // app.get('/pass',function (req,res) {
-  //   res.render('pass');
-  // });
-  // app.get('/sso',function (req,res) {
-  //   res.render('sso');
-  // });
-  // app.get('/phone',function (req,res) {
-  //   res.render('phone');
-  // });
-  // app.get('/phonetoo',function (req,res) {
-  //   res.render('phonetoo');
-  // });
-  // app.get('/dongguanwan',function (req,res) {
-  //   res.render('dongguanwan');
-  // });
-  // app.get('/plan2',function (req,res) {
-  //   res.render('plan2');
-  // });
-  // app.get('/personal/modal/edit_profile',function (req,res) {
-  //   res.render('personal/modal/edit_profile');
-  // });
   // 运维页面路由
-
 
   app.get('/master',function (req,res) {
     res.render('master');
@@ -48,7 +8,9 @@ module.exports = function (app) {
     res.render('master/login');
   });
   app.get('/master/blank',function (req,res) {
-    res.render('master/blank');
+    res.render('master/blank',{
+      pagename:'呵呵哒'
+    });
   });
   // 用户管理
   app.get('/master/management/user/client',function (req,res) {
