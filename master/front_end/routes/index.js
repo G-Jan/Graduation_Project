@@ -7,8 +7,8 @@ module.exports = function (app) {
   app.get('/master/login',function (req,res) {
     res.render('master/login');
   });
-  app.get('/master/blank',function (req,res) {
-    res.render('master/blank',{
+  app.get('/master/layout',function (req,res) {
+    res.render('master/layout',{
       pagename:'呵呵哒'
     });
   });
